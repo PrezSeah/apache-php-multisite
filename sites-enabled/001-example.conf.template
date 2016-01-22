@@ -1,0 +1,17 @@
+<VirtualHost *:80>
+    ServerName example.com
+    ServerAlias www.example.com
+    DocumentRoot /var/www/example.com
+    <Directory "/var/www/example.com">
+        Options +FollowSymLinks -Indexes
+        AllowOverride All
+        Order deny,allow
+        Allow from all
+        Satisfy all
+    </Directory>
+    ErrorLog ${APACHE_LOG_DIR}/example.com-error_log
+    CustomLog ${APACHE_LOG_DIR}/example.com-access_log combined
+    
+    php_value short_open_tag "On"
+    
+</VirtualHost>

@@ -1,0 +1,22 @@
+apache:
+  image: rivenvirus/apache-php-multisite
+  links:
+    - mysql
+    - memcached
+  ports:
+    - "80:80"
+  volumes:
+    - ./sites-enabled:/etc/apache2/sites-enabled
+    - ./www:/var/www
+mysql:
+  image: mysql
+  ports:
+    - "3306:3306"
+  environment:
+    MYSQL_ROOT_PASSWORD: 123
+    MYSQL_USER: root
+    MYSQL_PASSWORD: 123
+memcached:
+  image: memcached
+  ports:
+    - "11211:11211"
