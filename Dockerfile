@@ -4,7 +4,7 @@ MAINTAINER Santiago Pérez <rivenvirus@gmail.com>
 ADD policy-rc.d /usr/sbin/policy-rc.d
 
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
-RUN apt-get update && apt-get install -y --force-yes  apache2 php5 libapache2-mod-php5 php5-mcrypt php5-curl php5-memcache php5-memcached php5-gd php5-mysql
+RUN apt-get update && apt-get install -y --force-yes apache2 php5 libapache2-mod-php5 php5-mcrypt php5-curl php5-memcache php5-memcached php5-gd php5-mysql
     
 # Configure apache
 RUN a2enmod rewrite
